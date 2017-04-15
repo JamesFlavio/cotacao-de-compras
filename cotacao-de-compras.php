@@ -34,79 +34,191 @@
 	    <th>Total</th>
       </tr>
 	  <tr  class="text-center">
-	    <td>11</td>
-	    <td class="text-left">Impressora Térmica Elgin i9</td>
+	    <td>9</td>
+	    <td class="text-left">Impressora Térmica Elgin i9 USB</td>
 	    <td>10</td>
-	    <td >2</td>
-	    <td><input type="text" value="2" size="5" class="form-control text-center" /></td>
+	    <td >1</td>
+	    <td><input type="text" value="9" size="5" class="form-control text-center" /></td>
 	    <td>
           <div class="input-group">
           <span class="input-group-addon">R$</span>
-          <input type="text" size="7" class="form-control"/>
+          <input type="text" class="form-control" value="140,00" size="7"/>
           </div>
         </td>
 	    <td>
           <div class="input-group">
           <span class="input-group-addon">R$</span>
-          <input type="text" size="7" class="form-control"/>
+          <input type="text" class="form-control" value="1260,00" size="7"/>
           </div>
         </td>
       </tr>
 	  <tr  class="text-center">
-	    <td>11</td>
-	    <td class="text-left">Impressora Térmica Elgin i9</td>
+	    <td>10</td>
+	    <td class="text-left">Impressora Térmica Epson TMT-20 USB</td>
 	    <td>10</td>
 	    <td >2</td>
-	    <td><input type="text" value="2" size="5" class="form-control text-center" /></td>
+	    <td><input type="text" value="8" size="5" class="form-control text-center" /></td>
 	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
-	      <input type="text" size="7" class="form-control"/>
+	      <input type="text" class="form-control" value="130,00" size="7"/>
 	      </div></td>
 	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
-	      <input type="text" size="7" class="form-control"/>
+	      <input type="text" class="form-control" value="1040,00" size="7"/>
+	      </div></td>
+      </tr>
+	  <tr  class="text-center">
+	    <td>11</td>
+	    <td class="text-left">Impressora Térmica Daruma DR-800 c/ Guilhotina USB</td>
+	    <td>10</td>
+	    <td >3</td>
+	    <td><input type="text" value="7" size="5" class="form-control text-center" /></td>
+	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
+	      <input type="text" class="form-control" value="120,00" size="7"/>
+	      </div></td>
+	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
+	      <input type="text" class="form-control" value="840,00" size="7"/>
+	      </div></td>
+      </tr>
+	  <tr  class="text-center">
+	    <td>12</td>
+	    <td class="text-left">Impressora Térmica Bematech MP-4200 USB</td>
+	    <td>10</td>
+	    <td >4</td>
+	    <td><input type="text" value="6" size="5" class="form-control text-center" /></td>
+	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
+	      <input type="text" class="form-control" value="110,00" size="7"/>
+	      </div></td>
+	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
+	      <input type="text" class="form-control" value="660,00" size="7"/>
+	      </div></td>
+      </tr>
+	  <tr  class="text-center">
+	    <td>13</td>
+	    <td class="text-left">Leitor de Código de Barras Quickscan QW-2120 USB</td>
+	    <td>10</td>
+	    <td >5</td>
+	    <td><input type="text" value="5" size="5" class="form-control text-center" /></td>
+	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
+	      <input type="text" class="form-control" value="100,00" size="7"/>
+	      </div></td>
+	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
+	      <input type="text" class="form-control" value="500,00" size="7"/>
+	      </div></td>
+      </tr>
+	  <tr  class="text-center">
+	    <td>14</td>
+	    <td class="text-left">Bobina Térmica Maxprint 80x40 Am c/ 30 Und.</td>
+	    <td>10</td>
+	    <td >6</td>
+	    <td><input type="text" value="4" size="5" class="form-control text-center" /></td>
+	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
+	      <input type="text" class="form-control" value="90,00" size="7"/>
+	      </div></td>
+	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
+	      <input type="text" class="form-control" value="360,00" size="7"/>
 	      </div></td>
       </tr>
   </table>
+<hr>
   <table class="table-condensed table-hover table-striped" align="center">
     <tr>
-      <th colspan="7" class="text-center text-danger text-uppercase">Melhores preços por fornecedor</th>
+      <th colspan="5" class="text-center text-danger text-uppercase">Melhores preços por fornecedor</th>
     <tr>
-      <th colspan="7" class="text-danger">Fornecedor 01</th>
+      <th colspan="5" class="text-danger">Fornecedor 01</th>
     </tr>
   <tr>
     <th>ID</th>
     <th>Descriçao</th>
-    <th>Mín/Max</th>
-    <th>Qtd Atual</th>
     <th>Qtd Cotada</th>
     <th>Valor Unitário</th>
     <th>Total</th>
   </tr>
   <tr  class="text-center">
-    <td>11</td>
-    <td class="text-left">Impressora Térmica Elgin i9</td>
+    <td>9</td>
+    <td class="text-left">Impressora Térmica Elgin i9 USB</td>
+    <td>9</td>
+    <td>R$140,00</td>
+    <td>R$1260,00</td>
+  </tr>
+  <tr  class="text-center">
     <td>10</td>
-    <td >2</td>
-    <td><input type="text" value="2" size="5" class="form-control text-center" /></td>
-    <td><div class="input-group"> <span class="input-group-addon">R$</span>
-      <input type="text" size="7" class="form-control"/>
-    </div></td>
-    <td><div class="input-group"> <span class="input-group-addon">R$</span>
-      <input type="text" size="7" class="form-control"/>
-    </div></td>
+    <td class="text-left">Impressora Térmica Epson TMT-20 USB</td>
+    <td>8</td>
+    <td>R$130,00</td>
+    <td>R$1040,00</td>
   </tr>
   <tr  class="text-center">
     <td>11</td>
-    <td class="text-left">Impressora Térmica Elgin i9</td>
-    <td>10</td>
-    <td >2</td>
-    <td><input type="text" value="2" size="5" class="form-control text-center" /></td>
-    <td><div class="input-group"> <span class="input-group-addon">R$</span>
-      <input type="text" size="7" class="form-control"/>
-    </div></td>
-    <td><div class="input-group"> <span class="input-group-addon">R$</span>
-      <input type="text" size="7" class="form-control"/>
-    </div></td>
+    <td class="text-left">Impressora Térmica Daruma DR-800 c/ Guilhotina USB</td>
+    <td>7</td>
+    <td>R$120,00</td>
+    <td>R$840,00</td>
   </tr>
+  <tr  class="text-center">
+    <td>12</td>
+    <td class="text-left">Impressora Térmica Bematech MP-4200 USB</td>
+    <td>6</td>
+    <td>R$110,00</td>
+    <td>R$660,00</td>
+  </tr>
+  <tr  class="text-center">
+    <td colspan="5">&nbsp;</td>
+    </tr>
+  <tr  class="text-center">
+    <td colspan="5" bgcolor="#dff0d8">Valor Total: R$3800,00</td>
+    </tr>
+  </table>
+  <br>
+  <table class="table-condensed table-hover table-striped" align="center">
+    <tr>
+      <th colspan="5" class="text-danger">Fornecedor 02</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th>Descriçao</th>
+      <th>Qtd Cotada</th>
+      <th>Valor Unitário</th>
+      <th>Total</th>
+    </tr>
+    <tr  class="text-center">
+      <td>13</td>
+      <td class="text-left">Leitor de Código de Barras Quickscan QW-2120 USB</td>
+      <td>5</td>
+      <td>R$80,00</td>
+      <td>R$400,00</td>
+    </tr>
+    <tr  class="text-center">
+      <td>14</td>
+      <td class="text-left">Bobina Térmica Maxprint 80x40 Am c/ 30 Und.</td>
+      <td>4</td>
+      <td>R$50,00</td>
+      <td>R$200,00</td>
+    </tr>
+    <tr  class="text-center">
+      <td colspan="5">&nbsp;</td>
+    </tr>
+    <tr  class="text-center">
+      <td colspan="5" bgcolor="#dff0d8">Valor Total: R$600,00</td>
+    </tr>
+  </table>
+  <br>
+  <table class="table-condensed table-hover table-striped" align="center">
+    <tr>
+      <th colspan="5" class="text-danger">Fornecedor 03</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th>Descriçao</th>
+      <th>Qtd Cotada</th>
+      <th>Valor Unitário</th>
+      <th>Total</th>
+    </tr>
+    <tr  class="text-center">
+      <td>--</td>
+      <td class="text-left">-------------------------</td>
+      <td>---------------</td>
+      <td>----------------</td>
+      <td>-------</td>
+    </tr>
   </table>
 </div>
 <div class="container">
@@ -115,10 +227,34 @@
     <h2>Utilidade do projeto</h2>
     <p>Este projeto tem a finalidade de em meio a alguns fornecedores selecionados, cotar produtos/servisos a serem executados e no final do processo, ele lista qual dos fornecedores tiveram os melhores preços.</p>
     <h2>Funcionalidades</h2>
+    <h3>COTAÇÃO DE COMPRAS</h3>
+    <dl class="dl-horizontal">
+      <dt>ID:</dt>
+      <dd>Número de identificação do produto na base de dados.</dd>
+    </dl>
+    
+    <dl class="dl-horizontal">
+      <dt>Desciçao:</dt>
+      <dd>Nome do produto ou serviço a ser cotado.</dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+      <dt>Min/Max:</dt>
+      <dd>Quantidade informada no cadastro do produto como estoque mínimo ou máximo pretendeida. Este campo será utilizado para fazer o cálculo da quantidade a ser cotada.</dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+      <dt>Qtd Atual:</dt>
+      <dd>Quantidade de produto em estoque no momento. Este campo será utilizado para fazer o cálculo da quantidade a ser cotada.</dd>
+    </dl>
+
+
     <dl class="dl-horizontal">
       <dt>Qtd Cotada:</dt>
-      <dd>Neste campo citamos a quantidade que iremos cotar de cada produto ou qual quantidade foi informada pelo fornecedor para quele preço informado.</dd>
+      <dd>Este campo é feito o cálculo com base no quantidade mínima ou máxima (Min/Max) que foi informado no cadastro do produto subitraindo a quantidade atual que já temos com o cálculo <b>"Mix/Max" - Qtd Atual</b>. Podemos colocar uma quantidade maior ou menor em caso de ser feita uma cotação com quantidade diferente a que foi informada automáticamente pelo sistema.</dd>
     </dl>
+
+
     <dl class="dl-horizontal">
       <dt>Valor Unitário:</dt>
       <dd>O valor passado pelo fornecedor ou prestador de servço sobre o item que foi cotado.</dd>
@@ -127,79 +263,9 @@
       <dt>Valor total:</dt>
       <dd>Valor total do item cotado, sendo <b>Qtd Cotada * Valor Unitário</b><p>Este campo também serve para fazer um processo inverso, se o mesmo for informado juntamente com a quantidade, ele automaticamente atualiza o preço unitário com o cálculo <b>Valor Total / Qtd Cotada</b></p>.</dd>
     </dl>
+    <h3>MELHORES PREÇOS POR FORNECEDOR</h3>
+    <p>Mostra na melhor ordem qual fornecedor ganhou e em qual item.</p>
   </article>
 </div>
-<table>
-  <tr>
-    <td>
-    
-<form class="form-horizontal">
-  <div class="form-group has-success has-feedback">
-    <label class="control-label col-sm-3" for="inputSuccess3">Entrada com successo</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
-      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-      <span id="inputSuccess3Status" class="sr-only">(successo)</span>
-    </div>
-  </div>
-  <div class="form-group has-success has-feedback">
-    <label class="control-label col-sm-3" for="inputGroupSuccess2">Grupo de entrada com successo</label>
-    <div class="col-sm-9">
-      <div class="input-group">
-        <span class="input-group-addon">@</span>
-        <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status">
-      </div>
-      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-      <span id="inputGroupSuccess2Status" class="sr-only">(successo)</span>
-    </div>
-  </div>
-</form>
-</td>
-  </tr>
-  <tr>
-    <td>
-<form class="form-inline">
-  <div class="form-group has-success has-feedback">
-    <label class="control-label" for="inputSuccess4">Entrada com successo</label>
-    <input type="text" class="form-control" id="inputSuccess4" aria-describedby="inputSuccess4Status">
-    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-    <span id="inputSuccess4Status" class="sr-only">(successo)</span>
-  </div>
-</form>
-<form class="form-inline">
-  <div class="form-group has-success has-feedback">
-    <label class="control-label" for="inputGroupSuccess3">Grupo de entrada com successo</label>
-    <div class="input-group">
-    <span class="input-group-addon">@</span></div>
-    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-    <span id="inputGroupSuccess3Status" class="sr-only">(successo)</span>
-  </div>
-</form>
-    </td>
-  </tr>
-  <tr>
-    <td>
-
-<div class="form-group has-success has-feedback">
-  <label class="control-label sr-only" for="inputSuccess5">Etiqueta oculta</label>
-  <input type="text" class="form-control" id="inputSuccess5" aria-describedby="inputSuccess5Status">
-  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-  <span id="inputSuccess5Status" class="sr-only">(successo)</span>
-</div>
-<div class="form-group has-success has-feedback">
-  <label class="control-label sr-only" for="inputGroupSuccess4">grupo de entrada com successo</label>
-  <div class="input-group">
-    <span class="input-group-addon">@</span>
-    <input type="text" class="form-control" id="inputGroupSuccess4" aria-describedby="inputGroupSuccess4Status">
-  </div>
-  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-  <span id="inputGroupSuccess4Status" class="sr-only">(successo)</span>
-</div>
-    
-    </td>
-  </tr>
-</table>
-
-
 </body>
 </html>
