@@ -164,7 +164,7 @@
     <td colspan="5">&nbsp;</td>
     </tr>
   <tr  class="text-center">
-    <td colspan="5" bgcolor="#dff0d8">Valor Total: R$3800,00</td>
+    <td colspan="5" bgcolor="#dff0d8"><strong>Valor Total: R$3800,00</strong></td>
     </tr>
   </table>
   <br>
@@ -197,7 +197,7 @@
       <td colspan="5">&nbsp;</td>
     </tr>
     <tr  class="text-center">
-      <td colspan="5" bgcolor="#dff0d8">Valor Total: R$600,00</td>
+      <td colspan="5" bgcolor="#dff0d8"><strong>Valor Total: R$600,00</strong></td>
     </tr>
   </table>
   <br>
@@ -212,12 +212,61 @@
       <th>Valor Unitário</th>
       <th>Total</th>
     </tr>
-    <tr  class="text-center">
+    <tr class="text-center">
       <td>--</td>
       <td class="text-left">-------------------------</td>
       <td>---------------</td>
       <td>----------------</td>
       <td>-------</td>
+    </tr>
+  </table>
+  <hr>
+  <table class="table-condensed table-hover table-striped" align="center">
+    <tr>
+      <th colspan="4" class="text-center text-info">Base de Dados Mysql<br>
+        cotacao_de_compras</th>
+    </tr>
+    <tr>
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Tamanho</th>
+      <th>Observações</th>
+    </tr>
+    <tr class="text-center">
+      <td>id</td>
+      <td>int</td>
+      <td>10</td>
+      <td>Auto incrementado e chave primária.</td>
+    </tr>
+    <tr class="text-center">
+      <td>descricao</td>
+      <td class="text-left">char</td>
+      <td>70</td>
+      <td>Nome do produto ou serviço.</td>
+    </tr>
+    <tr class="text-center">
+      <td>quantidade_minima</td>
+      <td>decimal</td>
+      <td>10,6</td>
+      <td>Quantidade mínima desejada para estoque.</td>
+    </tr>
+    <tr class="text-center">
+      <td>quantidade_maxima</td>
+      <td>decimal</td>
+      <td>10,6</td>
+      <td>Quantidade máxima desejada para estoque.</td>
+    </tr>
+    <tr class="text-center">
+      <td>ultimo_preco_compra</td>
+      <td>decimal</td>
+      <td>10,6</td>
+      <td>Preço do item adquirido na última compra.</td>
+    </tr>
+    <tr class="text-center">
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
     </tr>
   </table>
 </div>
@@ -265,6 +314,9 @@
     </dl>
     <h3>MELHORES PREÇOS POR FORNECEDOR</h3>
     <p>Mostra na melhor ordem qual fornecedor ganhou e em qual item.</p>
+
+    <h2>Requisitos</h2>
+	PHP e Banco de Dados MySQL.
   </article>
 </div>
 </body>
