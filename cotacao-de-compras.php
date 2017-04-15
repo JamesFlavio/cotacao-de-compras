@@ -1,14 +1,16 @@
 <html>
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="author" content="James Flávio Nunes da Cruz">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <!--  Bootstrap CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="cotacao-de-precos.css"  rel="stylesheet" >
+
+	<script type="text/javascript" src="cotacao-de-compras.js"></script>
+
 <title>Empório Automação Comercial & Consultoria</title>
 </head>
 
@@ -34,21 +36,21 @@
 	    <th>Total</th>
       </tr>
 	  <tr  class="text-center">
-	    <td>9</td>
+	    <td>9<input name="id" type="hidden" id="id" value="9"></td>
 	    <td class="text-left">Impressora Térmica Elgin i9 USB</td>
 	    <td>10</td>
 	    <td >1</td>
-	    <td><input type="text" value="9" size="5" class="form-control text-center" /></td>
+	    <td><input name="quantidade_cotada" type="text" onKeyPress="calcular()" onblur="calcular()"class="form-control text-center" id="quantidade_cotada" value="9" size="5" /></td>
 	    <td>
           <div class="input-group">
           <span class="input-group-addon">R$</span>
-          <input type="text" class="form-control" value="140,00" size="7"/>
+          <input name="valor_unitario" type="text" onKeyPress="calcular()" onblur="calcular()" class="form-control" id="valor_unitario" value="140,00" size="7"/>
           </div>
         </td>
 	    <td>
           <div class="input-group">
           <span class="input-group-addon">R$</span>
-          <input type="text" class="form-control" value="1260,00" size="7"/>
+          <input name="total" type="text" class="form-control" id="total" value="1260,00" size="7"/>
           </div>
         </td>
       </tr>
