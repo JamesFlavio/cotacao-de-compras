@@ -16,7 +16,8 @@
 
 <body>
 <div class="container-fluid">
-	<table class="table-condensed table-hover table-striped" align="center">
+ <form id="COTACAODECOMPRAS">
+  <table class="table-condensed table-hover table-striped" align="center">
 	  <tr>
 	    <th colspan="7" class="text-center text-danger text-uppercase">Cotação de Compra</th>
 	  <tr>
@@ -36,35 +37,36 @@
 	    <th>Total</th>
       </tr>
 	  <tr  class="text-center">
-	    <td>9<input name="id" type="hidden" id="id" value="9"></td>
+	    <td>9<input name="idProduto9" type="hidden" id="id" value="9"></td>
 	    <td class="text-left">Impressora Térmica Elgin i9 USB</td>
 	    <td>10</td>
 	    <td >1</td>
-	    <td><input name="quantidade_cotada" type="text" onKeyPress="calcular()" onblur="calcular()"class="form-control text-center" id="quantidade_cotada" value="9" size="5" /></td>
+	    <td><input name="quantidade_cotada9" type="text" onKeyPress="calcular()" onblur="calcular()"class="form-control text-center" id="quantidade_cotada9" value="9" size="5" /></td>
 	    <td>
           <div class="input-group">
           <span class="input-group-addon">R$</span>
-          <input name="valor_unitario" type="text" onKeyPress="calcular()" onblur="calcular()" class="form-control" id="valor_unitario" value="140,00" size="7"/>
+          <input name="valor_unitario9" type="text" onKeyPress="calcular()" onblur="calcular()" class="form-control" id="valor_unitario9" value="140,00" size="7"/>
           </div>
         </td>
 	    <td>
           <div class="input-group">
           <span class="input-group-addon">R$</span>
-          <input name="total" type="text" class="form-control" id="total" value="1260,00" size="7"/>
+          <input name="total9" type="text" class="form-control" id="total9" value="1260,00" size="7"/>
           </div>
         </td>
       </tr>
 	  <tr  class="text-center">
-	    <td>10</td>
+	    <td>10
+	      <input name="idProduto10" type="hidden" id="idProduto10" value="10"></td>
 	    <td class="text-left">Impressora Térmica Epson TMT-20 USB</td>
 	    <td>10</td>
 	    <td >2</td>
-	    <td><input type="text" value="8" size="5" class="form-control text-center" /></td>
+	    <td><input name="quantidade_cotada10" type="text" onKeyPress="calcular()" onblur="calcular()"class="form-control text-center" id="quantidade_cotada10" value="8" size="5" /></td>
 	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
-	      <input type="text" class="form-control" value="130,00" size="7"/>
+	      <input name="valor_unitario10" type="text" onKeyPress="calcular()" onblur="calcular()" class="form-control" id="valor_unitario10" value="130,00" size="7"/>
 	      </div></td>
 	    <td><div class="input-group"> <span class="input-group-addon">R$</span>
-	      <input type="text" class="form-control" value="1040,00" size="7"/>
+	      <input name="total10" type="text" class="form-control" id="total10" value="1040,00" size="7"/>
 	      </div></td>
       </tr>
 	  <tr  class="text-center">
@@ -120,6 +122,7 @@
 	      </div></td>
       </tr>
   </table>
+ </form>
 <hr>
   <table class="table-condensed table-hover table-striped" align="center">
     <tr>
