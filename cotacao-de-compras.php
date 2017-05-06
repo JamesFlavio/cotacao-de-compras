@@ -15,147 +15,190 @@
 </head>
 
 <body>
-<div class="container-fluid">
+		<form>
+			<select name="id_tipo_contacto" id="id_tipo_contacto">
+				<option value="empresa">Contacto empresa</option>
+				<option value="casamento">Contacto casamento</option>
+			</select>
+			<div id="empresa" class="formulario">Mostra formulário empresa</div>
+			<div id="casamento" class="formulario" style="display:none;">Mostra formulário casamento</div>
+		</form>
+		
+	<div class="container-fluid">
  <form id="COTACAODECOMPRAS">
-  <table class="table-condensed table-hover table-striped" align="center">
+  <table class="table-condensed" align="center">
 	  <tr>
 	    <th colspan="7" class="text-center text-danger text-uppercase">Cotação de Compra</th>
+	  </tr>
 	  <tr>
-	    <th colspan="7" class="text-danger text-uppercase"><select name="Fornecedor">
-	      <option>Fornecedor 01</option>
-	      <option>Fornecedor 02</option>
-	      <option>Fornecedor 03</option>
-	    </select></th>
-      </tr>
-	  <tr>
-	    <th>ID</th>
-	    <th>Descriçao</th>
-	    <th>Mín/Max</th>
-	    <th>Qtd Atual</th>
-	    <th>Qtd Cotada</th>
-	    <th>Valor Unitário</th>
-	    <th>Total</th>
-      </tr>
-  <?php
-
-	$hostMysql = "181.41.198.253";  //Endereço ip do banco de dados
-
-	$bdnameMysql = "emporioa_dados";  //Nome do banco de dados
-
-	$userMysql = "emporioa"; //Usuário de acesso ao banco de dados
-
-	$passwordMysql = "Euatopng"; //Senha de acesso ao banco de dados
-
-
+	    <th colspan="7" class="text-danger text-uppercase"><select id="selectfornecedor">
+	      <?php
+/*
+	$hostMysql		= "181.41.198.253";  //Endereço ip do banco de dados
+	$bdnameMysql	= "emporioa_desenvolvimento";  //Nome do banco de dados
+	$userMysql		= "emporioa"; //Usuário de acesso ao banco de dados
+	$passwordMysql	= "Euatopng"; //Senha de acesso ao banco de dados
+*/
+	$hostMysql		= "169.254.27.210";  //Endereço ip do banco de dados
+	$bdnameMysql	= "emporioa_desenvolvimento";  //Nome do banco de dados
+	$userMysql		= "usuario"; //Usuário de acesso ao banco de dados
+	$passwordMysql	= "senha"; //Senha de acesso ao banco de dados
+	
+	
 	$conexaoMysql = mysqli_connect($hostMysql,$userMysql,$passwordMysql,$bdnameMysql); // Conectacom o banco
 
 	// Checa conexão
 	if (mysqli_connect_errno())
 	  {
-	  echo "<br><br><br>rro na conexão MySQL: " . mysqli_connect_error() . "<br><br><br>";
+	  echo "<br><br><br>Erro na conexão MySQL: " . mysqli_connect_error() . "<br><br><br>";
 	  }
 
 	// Executa SELECT na tabela
-	$sql			= "SELECT * FROM cotacao_de_compras";
-	$resultadoMysql	= mysqli_query($conexaoMysql, $sql);
+	$sqlCotacao				= "SELECT DISTINCT fornecedores.id, fornecedores.razao_social FROM cotacao_de_compras_participantes INNER JOIN fornecedores ON fornecedores.id = cotacao_de_compras_participantes.fornecedores_id";
+	$resultadoMysqlCotacao	= mysqli_query($conexaoMysql, $sqlCotacao);
 
-// Lista produto da tabela
-if (mysqli_num_rows($resultadoMysql) > 0) {
+// Lista cotações
+if (mysqli_num_rows($resultadoMysqlCotacao) > 0) {
     // output data of each row
-    while($rowMysql = mysqli_fetch_assoc($resultadoMysql)) {
+    while($rowMysqlCotacao = mysqli_fetch_assoc($resultadoMysqlCotacao)) {
 
 			// Faz captura de campos
-			$id					= $rowMysql["id"];
-			$id_produto			= $rowMysql["id_produto"];
-			$descricao			= $rowMysql["descricao"];
-			$quantidadeMinima	= (float)$rowMysql["quantidade_minima"];
-			$quantidadeMaxima	= (float)$rowMysql["quantidade_maxima"];
-			$quantidadeCotada	= (float)$rowMysql["quantidade_cotada"];
-			$valorUnitario		= (float)number_format($rowMysql["ultimo_preco_compra"],"2",",",".");
-			$total				= (float)$quantidadeCotada*$valorUnitario;
-		// (float) faz a conversão dos valores para que possam ser caculados posteriormente, pois se não for convertido os valores ficam sendo reconhecidos como string
+			$id	= $rowMysqlCotacao["id"];
+			$razao_social	= $rowMysqlCotacao["razao_social"];
 
-
-?>
-   	  <tr  class="text-center">
-	    <td><?php echo($id_produto);?><input name="idProduto<?php echo($id_produto);?>" type="hidden" id="idProduto<?php echo($id_produto);?>" value="<?php echo($id_produto);?>"></td>
-	    <td class="text-left"><?php echo $descricao;?></td>
-	    <td>##</td>
-	    <td >##</td>
-	    <td><input name="quantidade_cotada<?php echo($id_produto);?>" type="text" onKeyPress="calcular()" onblur="calcular()"class="form-control text-center" id="quantidade_cotada<?php echo($id_produto);?>" value="<?php echo($quantidadeCotada);?>" size="5" /></td>
-	    <td>
-          <div class="input-group">
-          <span class="input-group-addon">R$</span>
-          <input name="valor_unitario<?php echo($id_produto);?>" type="text" onKeyPress="calcular()" onblur="calcular()" class="form-control" id="valor_unitario<?php echo($id_produto);?>" value="<?php echo($valorUnitario);?>" size="7"/>
-          </div>
-        </td>
-	    <td>
-          <div class="input-group">
-          <span class="input-group-addon">R$</span>
-          <input name="total9" type="text" class="form-control" id="total<?php echo($id_produto);?>" value="<?php echo($total);?>" size="7"/>
-          </div>
-        </td>
-      </tr>
-<?php
+		  ?>
+	      <option value="trfornecedor<?php echo $id;?>"><?php echo $razao_social;?></option>
+		  <?php
 	}
-} else {
-?>
- 	  <tr>
-	    <th colspan="7" class="text-center text-danger text-uppercase">0 Resultados</th>
-	  <tr>
-<?php
 }
-?>
+		  ?>
+
+	    </select></th>
+      </tr>
+	  <tr>
+	    <td colspan="7">
+		  <table class="table-hover table-striped">
+			<tr>
+			  <th class="text-center">ID</th>
+			  <th class="text-center">Descriçao</th>
+			  <th class="text-center">Mín/Max</th>
+			  <th class="text-center">Qtd Atual</th>
+			  <th class="text-center">Qtd Cotada</th>
+			  <th class="text-center">Valor Unitário</th>
+			  <th class="text-center">Total</th>
+		    </tr>
+			  <?php
+		// Executa SELECT na tabela
+		$sql			= "
+	SELECT	cotacao_de_compras_participantes.fornecedores_id AS fornecedor_id,
+			cotacao_de_compras_participantes.preco,
+			cotacao_de_compras_participantes.cotacao_de_compras_produtos_produtos_id AS produto_id,
+			cotacao_de_compras_produtos.quantidade_cotada,
+			produtos.nome
+	FROM
+	cotacao_de_compras_participantes
+	INNER JOIN cotacao_de_compras_produtos ON cotacao_de_compras_participantes.cotacao_de_compras_produtos_produtos_id = cotacao_de_compras_produtos.produtos_id
+	INNER JOIN produtos ON cotacao_de_compras_participantes.cotacao_de_compras_produtos_produtos_id = produtos.id
+	ORDER BY cotacao_de_compras_participantes.fornecedores_id ASC;
+		";
+		$resultadoMysql	= mysqli_query($conexaoMysql, $sql);
+
+	// Lista produto da tabela
+	if (mysqli_num_rows($resultadoMysql) > 0) {
+		// output data of each row
+		while($rowMysql = mysqli_fetch_assoc($resultadoMysql)) {
+
+				// Faz captura de campos
+				$fornecedor_id		= $rowMysql["fornecedor_id"];
+				$produto_id			= $rowMysql["produto_id"];
+				$nome				= $rowMysql["nome"];
+				$quantidadeCotada	= (float)$rowMysql["quantidade_cotada"];
+				$preco				= (float)number_format($rowMysql["preco"],"2",",",".");
+				$total				= (float)$quantidadeCotada*$preco;
+			// (float) faz a conversão dos valores para que possam ser caculados posteriormente, pois se não for convertido os valores ficam sendo reconhecidos como string
+
+
+	?>
+		  <tr id="trfornecedor<?php echo $fornecedor_id;?>" class="trfornecedor" style="display:none;">
+			<td><?php echo($fornecedor_id.".".$produto_id);?><input name="idProduto<?php echo($fornecedor_id.".".$produto_id);?>" type="hidden" id="idProduto<?php echo($fornecedor_id.".".$produto_id);?>" value="<?php echo($fornecedor_id.".".$produto_id);?>"></td>
+			<td class="text-left"><?php echo $nome;?></td>
+			<td>##</td>
+			<td >##</td>
+			<td><input name="quantidade_cotada<?php echo($fornecedor_id.".".$produto_id);?>" type="text" onKeyPress="calcular()" onblur="calcular()"class="form-control text-center" id="quantidade_cotada<?php echo($fornecedor_id.".".$produto_id);?>" value="<?php echo($quantidadeCotada);?>" size="5" /></td>
+			<td>
+			  <div class="input-group">
+			  <span class="input-group-addon">R$</span>
+			  <input name="valor_unitario<?php echo($fornecedor_id.".".$produto_id);?>" type="text" onKeyPress="calcular()" onblur="calcular()" class="form-control" id="valor_unitario<?php echo($fornecedor_id.".".$produto_id);?>" value="<?php echo($preco);?>" size="7"/>
+			  </div>
+			</td>
+			<td>
+			  <div class="input-group">
+				<span class="input-group-addon">R$</span>
+				<input name="total9" type="text" class="form-control" id="total<?php echo($fornecedor_id.".".$produto_id);?>" value="<?php echo($total);?>" size="7"/>
+			  </div>
+			</td>
+		  </tr>
+	<?php
+		}
+	}
+	?>
+		  </table>
+		</td>
+	  </tr>
   </table>
  </form>
-<hr>
+
+	<script type="text/javascript" src="cotacao-de-compras-fim.js"></script>
+
+ <hr>
   <table class="table-condensed table-hover table-striped" align="center">
     <tr>
       <th colspan="5" class="text-center text-danger text-uppercase">Melhores preços por fornecedor</th>
+	</tr>
     <tr>
       <th colspan="5" class="text-danger">Fornecedor 01</th>
     </tr>
-  <tr>
+	<tr>
     <th>ID</th>
     <th>Descriçao</th>
     <th>Qtd Cotada</th>
     <th>Valor Unitário</th>
     <th>Total</th>
   </tr>
-  <tr  class="text-center">
+	<tr  class="text-center">
     <td>9</td>
     <td class="text-left">Impressora Térmica Elgin i9 USB</td>
     <td>9</td>
     <td>R$140,00</td>
     <td>R$1260,00</td>
   </tr>
-  <tr  class="text-center">
+	<tr  class="text-center">
     <td>10</td>
     <td class="text-left">Impressora Térmica Epson TMT-20 USB</td>
     <td>8</td>
     <td>R$130,00</td>
     <td>R$1040,00</td>
   </tr>
-  <tr  class="text-center">
+	<tr  class="text-center">
     <td>11</td>
     <td class="text-left">Impressora Térmica Daruma DR-800 c/ Guilhotina USB</td>
     <td>7</td>
     <td>R$120,00</td>
     <td>R$840,00</td>
   </tr>
-  <tr  class="text-center">
+	<tr  class="text-center">
     <td>12</td>
     <td class="text-left">Impressora Térmica Bematech MP-4200 USB</td>
     <td>6</td>
     <td>R$110,00</td>
     <td>R$660,00</td>
-  </tr>
-  <tr  class="text-center">
-    <td colspan="5">&nbsp;</td>
-    </tr>
-  <tr  class="text-center">
-    <td colspan="5" bgcolor="#dff0d8"><strong>Valor Total: R$3800,00</strong></td>
-    </tr>
+	</tr>
+	<tr  class="text-center">
+      <td colspan="5">&nbsp;</td>
+	</tr>
+	<tr  class="text-center">
+      <td colspan="5" bgcolor="#dff0d8"><strong>Valor Total: R$3800,00</strong></td>
+	</tr>
   </table>
   <br>
   <table class="table-condensed table-hover table-striped" align="center">
@@ -211,7 +254,7 @@ if (mysqli_num_rows($resultadoMysql) > 0) {
     </tr>
   </table>
   <hr>
-  <table class="table-condensed table-hover table-striped" align="center">
+  <table id="tabelaBDMysqlcotacao_de_compras" class="table-condensed table-hover table-striped" align="center">
     <tr>
       <th colspan="4" class="text-center text-info">Base de Dados Mysql<br>
         cotacao_de_compras</th>
@@ -271,7 +314,7 @@ if (mysqli_num_rows($resultadoMysql) > 0) {
       <td>&nbsp;</td>
     </tr>
   </table>
-  <table class="table-condensed table-hover table-striped" align="center">
+  <table id="tabelaBDMysqlcotacao_de_compras_cotacao" class="table-condensed table-hover table-striped" align="center">
     <tr>
       <th colspan="4" class="text-center text-info">Base de Dados Mysql<br>
         cotacao_de_compras_cotacao</th>
@@ -319,7 +362,7 @@ if (mysqli_num_rows($resultadoMysql) > 0) {
       <td>&nbsp;</td>
     </tr>
   </table>
-  <table class="table-condensed table-hover table-striped" align="center">
+  <table id="tabelaBDMysqlcotacao_de_compras_participantes" class="table-condensed table-hover table-striped" align="center">
     <tr>
       <th colspan="4" class="text-center text-info">Base de Dados Mysql<br>
         cotacao_de_compras_participantes</th>
@@ -361,7 +404,7 @@ if (mysqli_num_rows($resultadoMysql) > 0) {
       <td>&nbsp;</td>
     </tr>
   </table>
-  <table class="table-condensed table-hover table-striped" align="center">
+  <table id="tabelaBDMysqlfornecedores" class="table-condensed table-hover table-striped" align="center">
     <tr>
       <th colspan="4" class="text-center text-info">Base de Dados Mysql<br>
         fornecedores</th>
@@ -392,7 +435,7 @@ if (mysqli_num_rows($resultadoMysql) > 0) {
     </tr>
   </table>
 </div>
-<div class="container">
+<div id="documentacao" class="container">
   <article>
     <h1>Documentação</h1>
     <h2>Utilidade do projeto</h2>

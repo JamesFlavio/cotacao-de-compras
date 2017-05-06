@@ -1,3 +1,4 @@
+// Função para calcular os valores informados
 function calcular(){	//passa o id do formulário como parâmentro
 
 	form = document.getElementById('COTACAODECOMPRAS');
