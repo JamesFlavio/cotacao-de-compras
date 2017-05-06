@@ -9,7 +9,6 @@
     <!--  Bootstrap CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 	<!--  Javascript de funções para este documento -->
-	<script type="text/javascript" src="cotacao-de-compras.js"></script>
 
 <title>Empório Automação Comercial & Consultoria</title>
 </head>
@@ -148,7 +147,7 @@ if (mysqli_num_rows($resultadoMysqlCotacao) > 0) {
   </table>
  </form>
 
-	<script type="text/javascript" src="cotacao-de-compras-fim.js"></script>
+	<script type="text/javascript" src="cotacao-de-compras.js"></script>
 
  <hr>
   <table class="table-condensed table-hover table-striped" align="center">
