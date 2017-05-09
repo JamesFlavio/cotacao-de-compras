@@ -13,24 +13,17 @@
 <title>Empório Automação Comercial & Consultoria</title>
 </head>
 
-<body>
-		<form>
-			<select name="id_tipo_contacto" id="id_tipo_contacto">
-				<option value="empresa">Contacto empresa</option>
-				<option value="casamento">Contacto casamento</option>
-			</select>
-			<div id="empresa" class="formulario">Mostra formulário empresa</div>
-			<div id="casamento" class="formulario" style="display:none;">Mostra formulário casamento</div>
-		</form>
-		
+<body>		
 	<div class="container-fluid">
  <form id="COTACAODECOMPRAS">
   <table class="table-condensed" align="center">
 	  <tr>
-	    <th colspan="7" class="text-center text-danger text-uppercase">Cotação de Compra</th>
+	    <th class="text-center text-danger text-uppercase">Cotação de Compra</th>
 	  </tr>
 	  <tr>
-	    <th colspan="7" class="text-danger text-uppercase"><select id="selectfornecedor">
+	    <th class="text-danger text-uppercase">
+		  <select id="selectfornecedor">
+		  <option>Selecione um fornecedor</option>
 	      <?php
 /*
 	$hostMysql		= "181.41.198.253";  //Endereço ip do banco de dados
@@ -44,7 +37,7 @@
 	$passwordMysql	= "senha"; //Senha de acesso ao banco de dados
 	
 	
-	$conexaoMysql = mysqli_connect($hostMysql,$userMysql,$passwordMysql,$bdnameMysql); // Conectacom o banco
+	$conexaoMysql = mysqli_connect($hostMysql,$userMysql,$passwordMysql,$bdnameMysql); // Conecta com o banco
 
 	// Checa conexão
 	if (mysqli_connect_errno())
@@ -66,7 +59,7 @@ if (mysqli_num_rows($resultadoMysqlCotacao) > 0) {
 			$razao_social	= $rowMysqlCotacao["razao_social"];
 
 		  ?>
-	      <option value="trfornecedor<?php echo $id;?>"><?php echo $razao_social;?></option>
+	      <option value="<?php echo $id;?>"><?php echo $razao_social;?></option>
 		  <?php
 	}
 }
@@ -75,7 +68,7 @@ if (mysqli_num_rows($resultadoMysqlCotacao) > 0) {
 	    </select></th>
       </tr>
 	  <tr>
-	    <td colspan="7">
+	    <td>
 		  <table class="table-hover table-striped">
 			<tr>
 			  <th class="text-center">ID</th>
@@ -133,7 +126,7 @@ if (mysqli_num_rows($resultadoMysqlCotacao) > 0) {
 			<td>
 			  <div class="input-group">
 				<span class="input-group-addon">R$</span>
-				<input name="total9" type="text" class="form-control" id="total<?php echo($fornecedor_id.".".$produto_id);?>" value="<?php echo($total);?>" size="7"/>
+				<input name="teste" type="text" class="form-control teste<?php echo $fornecedor_id;?>" id="total<?php echo($fornecedor_id.".".$produto_id);?>" value="<?php echo($total);?>" size="7"/>
 			  </div>
 			</td>
 		  </tr>
@@ -141,6 +134,12 @@ if (mysqli_num_rows($resultadoMysqlCotacao) > 0) {
 		}
 	}
 	?>
+			<tr>
+			  <td><br></td>
+			</tr>
+			<tr>
+			  <td colspan="7" class="text-center text-danger text-uppercase">Valor:<div id="valorTotal">R$0,00</div></td>
+			</tr>
 		  </table>
 		</td>
 	  </tr>
@@ -253,186 +252,6 @@ if (mysqli_num_rows($resultadoMysqlCotacao) > 0) {
     </tr>
   </table>
   <hr>
-  <table id="tabelaBDMysqlcotacao_de_compras" class="table-condensed table-hover table-striped" align="center">
-    <tr>
-      <th colspan="4" class="text-center text-info">Base de Dados Mysql<br>
-        cotacao_de_compras</th>
-    </tr>
-    <tr>
-      <th>Nome</th>
-      <th>Tipo</th>
-      <th>Tamanho</th>
-      <th>Observações</th>
-    </tr>
-    <tr class="text-center">
-      <td>id</td>
-      <td>int</td>
-      <td>10</td>
-      <td>Auto incrementado e chave primária.</td>
-    </tr>
-    <tr class="text-center">
-      <td>id_produto</td>
-      <td>int</td>
-      <td>10</td>
-      <td>ID do produto a ser cotado.</td>
-    </tr>
-    <tr class="text-center">
-      <td>descricao</td>
-      <td class="text-left">char</td>
-      <td>70</td>
-      <td>Nome do produto ou serviço.</td>
-    </tr>
-    <tr class="text-center">
-      <td>quantidade_minima</td>
-      <td>decimal</td>
-      <td>10,6</td>
-      <td>Quantidade mínima desejada para estoque.</td>
-    </tr>
-    <tr class="text-center">
-      <td>quantidade_maxima</td>
-      <td>decimal</td>
-      <td>10,6</td>
-      <td>Quantidade máxima desejada para estoque.</td>
-    </tr>
-    <tr class="text-center">
-      <td>quantidade_cotada</td>
-      <td>decimal</td>
-      <td>10,6</td>
-      <td>Quantidade desejada para cotação atual.</td>
-    </tr>
-    <tr class="text-center">
-      <td>ultimo_preco_compra</td>
-      <td>decimal</td>
-      <td>10,6</td>
-      <td>Preço do item adquirido na última compra.</td>
-    </tr>
-    <tr class="text-center">
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-  </table>
-  <table id="tabelaBDMysqlcotacao_de_compras_cotacao" class="table-condensed table-hover table-striped" align="center">
-    <tr>
-      <th colspan="4" class="text-center text-info">Base de Dados Mysql<br>
-        cotacao_de_compras_cotacao</th>
-    </tr>
-    <tr>
-      <th>Nome</th>
-      <th>Tipo</th>
-      <th>Tamanho</th>
-      <th>Observações</th>
-    </tr>
-    <tr class="text-center">
-      <td>id</td>
-      <td>int</td>
-      <td>10</td>
-      <td>Auto incrementado e chave primária.</td>
-    </tr>
-    <tr class="text-center">
-      <td>id_fornecedor</td>
-      <td>int</td>
-      <td>10</td>
-      <td>ID do fornecedor do item cotado.</td>
-    </tr>
-    <tr class="text-center">
-      <td>id_produto</td>
-      <td>int</td>
-      <td>10</td>
-      <td>ID do produto a ser cotado.</td>
-    </tr>
-    <tr class="text-center">
-      <td>quantidade_cotada</td>
-      <td>decimal</td>
-      <td>10,6</td>
-      <td>Quantidade proposta para o preço passado pelo forneedorl.</td>
-    </tr>
-    <tr class="text-center">
-      <td>preco</td>
-      <td>decimal</td>
-      <td>10,6</td>
-      <td>Preço do item fornecido pelo fornecedor.</td>
-    </tr>
-    <tr class="text-center">
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-  </table>
-  <table id="tabelaBDMysqlcotacao_de_compras_participantes" class="table-condensed table-hover table-striped" align="center">
-    <tr>
-      <th colspan="4" class="text-center text-info">Base de Dados Mysql<br>
-        cotacao_de_compras_participantes</th>
-    </tr>
-    <tr>
-      <th>Nome</th>
-      <th>Tipo</th>
-      <th>Tamanho</th>
-      <th>Observações</th>
-    </tr>
-    <tr class="text-center">
-      <td>id</td>
-      <td>int</td>
-      <td>10</td>
-      <td>Auto incrementado e chave primária.</td>
-    </tr>
-    <tr class="text-center">
-      <td>id_cotacao</td>
-      <td>int</td>
-      <td>10</td>
-      <td>ID da cotacao em andamento.</td>
-    </tr>
-    <tr class="text-center">
-      <td>situacao</td>
-      <td>int</td>
-      <td>2</td>
-      <td>1 = em andamento, 2 concluído.</td>
-    </tr>
-    <tr class="text-center">
-      <td>id_fornecedor</td>
-      <td>int</td>
-      <td>10</td>
-      <td>ID do fornecedor do item cotado.</td>
-    </tr>
-    <tr class="text-center">
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-  </table>
-  <table id="tabelaBDMysqlfornecedores" class="table-condensed table-hover table-striped" align="center">
-    <tr>
-      <th colspan="4" class="text-center text-info">Base de Dados Mysql<br>
-        fornecedores</th>
-    </tr>
-    <tr>
-      <th>Nome</th>
-      <th>Tipo</th>
-      <th>Tamanho</th>
-      <th>Observações</th>
-    </tr>
-    <tr class="text-center">
-      <td>id</td>
-      <td>int</td>
-      <td>10</td>
-      <td>Auto incrementado e chave primária.</td>
-    </tr>
-    <tr class="text-center">
-      <td>razao_social</td>
-      <td class="text-left">char</td>
-      <td>70</td>
-      <td>Razão Social.</td>
-    </tr>
-    <tr class="text-center">
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-  </table>
 </div>
 <div id="documentacao" class="container">
   <article>
