@@ -1,22 +1,6 @@
-<html>
-
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="author" content="James Flávio Nunes da Cruz">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--  Bootstrap CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-	<!--  Javascript de funções para este documento -->
-
-<title>Empório Automação Comercial & Consultoria</title>
-</head>
-
-<body>		
-	<div class="container-fluid">
- <form id="COTACAODECOMPRAS">
-  <table class="table-condensed" align="center">
+<div class="container-fluid">
+<form id="COTACAODECOMPRAS">
+	<table class="table-condensed" align="center">
 	  <tr>
 	    <th class="text-center text-danger text-uppercase">Cotação de Compra</th>
 	  </tr>
@@ -144,8 +128,6 @@ if (mysqli_num_rows($resultadoMysqlCotacao) > 0) {
 		</td>
 	  </tr>
   </table>
- </form>
+</form>
 
-	<script type="text/javascript" src="cotacao-de-compras.js"></script>
-</body>
-</html>
+<script type="text/javascript" src="cotacao-de-compras.js"></script>

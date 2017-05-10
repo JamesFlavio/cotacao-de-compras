@@ -6,10 +6,26 @@
     <h2>Funcionalidades</h2>
     <h3>COTAÇÃO DE COMPRAS</h3>
     <dl class="dl-horizontal">
+      <dt>Logo:</dt>
+      <dd>Volta a tela inicial do console, porém efetua as atualizações necessárias na página atual com o banco de dados.</dd>
+    </dl>
+    <dl class="dl-horizontal">
+      <dt>Pesquisa:</dt>
+      <dd>Pesquisa online das cotações e abertas.</dd>
+    </dl>
+    <dl class="dl-horizontal">
+      <dt>Botão Editar:</dt>
+      <dd>Depois de selecionado o número da cotação, abre a mesma para edição.</dd>
+    </dl>
+    <dl class="dl-horizontal">
+      <dt>Botão Adicionar:</dt>
+      <dd>Da inicio a uma nova cotação.</dd>
+    </dl>
+     <dl class="dl-horizontal">
       <dt>Fornecedor:</dt>
       <dd>Ao ser selecionado o fornecedor X, os itens abaixo são atualizados com os preoçs fornecidos pelo mesmo, ocultando os demais possivelmente com a função hidden em uma div.</dd>
     </dl>
-    <dl class="dl-horizontal">
+   <dl class="dl-horizontal">
       <dt>ID:</dt>
       <dd>Número de identificação do produto na base de dados.</dd>
     </dl>

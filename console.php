@@ -22,10 +22,10 @@
  
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
+			<a class="navbar-brand" href="#"  onclick="$('#centro').load('console-relatorios.php');">Cotação de Compras</a>
 			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
 				<span class="sr-only">Toggle navigation</span> 
 			</button> 
-			<a class="navbar-brand" href="console.php">Cotação de Compras</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -34,7 +34,7 @@
 				<button class="btn btn-default glyphicon glyphicon-pencil" type="submit"></button>
 				<button class="btn btn-default glyphicon glyphicon-plus" type="submit"></button>
 			</form>
-			
+			<a href="#"  onclick="$('#centro').load('adicionar-nova-cotacao.php');">Nova</a>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Telas <b class="caret"></b></a>
 					<ul class="dropdown-menu">
